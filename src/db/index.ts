@@ -1,5 +1,19 @@
+import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import { dbUrl, environment } from './config';
+
+dotenv.config();
+
+const {
+    DB_USER,
+    DB_PASSWORD,
+    DB_HOST,
+    DB_PORT,
+    DB_NAME,
+  } = process.env;
+
+//const dbUrl = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?authSource=admin`;
+const dbUrl = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`;
+const environment = process.env.NODE_ENV;
 
 const connect = () => {
     mongoose.connect(dbUrl, {}, (err) => {
@@ -8,6 +22,6 @@ const connect = () => {
         }
     });
 }
-const disconnect = () => { mongoose.connection.close() }
+const disconnect = ()=> { mongoose.connection.close() }
 
-export default {connect, disconnect}
+export default { connect, disconnect }
