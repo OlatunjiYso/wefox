@@ -15,16 +15,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(identifyUser)
 
-// app.listen(port, ()=> {
-//   console.log(`Listening on port ${port}`);
-//   router(app);
-// });
-router(app);
+app.listen(port, ()=> {
+  console.log(`Listening on port ${port}`);
+  router(app);
+});
 process.on('SIGINT', () => {
     console.warn('Shutting down server...');
     db.disconnect()
     console.log('Server successfully shutdown');
     process.exit(0);
   });
-
-  export { app };

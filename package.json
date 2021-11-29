@@ -33,7 +33,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "start": "ts-node --transpile-only src/app.ts",
-    "test:unit": "jest --detectOpenHandles",
+    "test:unit": "jest --coverage",
     "test:watch": "jest --watch"
   },
   "keywords": [
