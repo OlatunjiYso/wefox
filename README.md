@@ -36,7 +36,7 @@ A Simple Geolocation and Weather service
 ### REST API Endpoints 
 ---
 ##### 1. Signup a new user
-`POST /api/v1/users/auth/users/`
+`POST /api/v1/users/`
 ###### Request Body
     {  
         fullName: "John Doe",  
@@ -44,7 +44,7 @@ A Simple Geolocation and Weather service
         password: "password",  
     }     
 ##### 2. Login /Authentication 
-`POST /api/v1/users/auth/users/auth`
+`POST /api/v1/users/auth/`
 ###### Request Body
     {   
         email: "john@doe.com",  
