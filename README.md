@@ -2,7 +2,7 @@
 A Simple Geolocation and Weather service
  
 #### Screenshots 📸
-
+<img width="948" alt="cov-wefox" src="https://user-images.githubusercontent.com/27797745/143844008-3dcc03f8-5361-4992-bf1f-6dd62fe64a05.png">
 
 
 #### Getting started (Local Setup)💻
@@ -22,6 +22,7 @@ A Simple Geolocation and Weather service
 - Navigate to `http://localhost:{PORT}/api/v1` to get started.
 - To visit protected the routes, add your jwt token to the request headers. Like so:  
  `"Authorization": "Bearer eyJhbGciOiJIU........zI1NiIsInR5cCI6I"`
+
 
 #### Tech/framework used 🧰
 
