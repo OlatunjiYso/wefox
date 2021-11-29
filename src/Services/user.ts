@@ -43,7 +43,7 @@ export const authenticate = async (credentials: ILoginRequest) => {
         if (!existingUser) return sendAuthResponse(false, 401, 'Invalid Password or Email', '', '');
         const hash: string = existingUser.password;
         const passwordIsValid: boolean = await bcrypt.compare(password, hash);
-        if (!passwordIsValid) return sendAuthResponse(false, 401, 'Invalid Password | Email', '', '');
+        if (!passwordIsValid) return sendAuthResponse(false, 401, 'Invalid Password or Email', '', '');
         const userId = existingUser.id;
         const session = await createSession(userId);
         const sessionId = session.id;
@@ -67,7 +67,8 @@ const findExistingUser = async (email: string) => {
         if (!existingUser) return null;
         return existingUser;
     } catch (err) {
-        console.log(err.message)
+        const errorMessage = (err as Error).message;
+        console.log(errorMessage)
     }
 }
 
